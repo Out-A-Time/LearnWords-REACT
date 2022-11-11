@@ -17,12 +17,12 @@ export const randomWordIntoArray = (word) => {
 };
 
 // CREATES EMPTY WORD BOARD
-export const createEmptyBoard = (array) => {
+export const createEmptyBoard = () => {
   const guessWordObject = {};
-  for (let i = 1; i <= 6; i++) {
+  for (let i = 0; i <= 5; i++) {
     guessWordObject[`row${i}`] = [];
     const underscore = "_";
-    for (let j = 0; j < array.length; j++) {
+    for (let j = 0; j < 5; j++) {
       // console.log(`row${i}`);
       guessWordObject[`row${i}`].push(underscore);
     }
