@@ -2,10 +2,13 @@
 
 import { BoardRow } from "./BoardRow";
 
-export function Board() {
+export function Board(props) {
+  console.log("here", props.word);
+  console.log("row counter max", props.rowCounterMax);
+
   return (
     <>
-      <BoardRow />
+      <BoardRow mark={props.letterOnBoard} />
       <BoardRow />
       <BoardRow />
       <BoardRow />

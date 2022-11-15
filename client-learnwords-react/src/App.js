@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 import "./App.css";
 
 import { Header } from "./components/Header";
@@ -35,11 +37,19 @@ function App() {
   // }
   // mirrorWordBoard(wordsBoard);
 
+  const [data, setData] = useState("hello");
+  const [letterOnBoard, setLetterOnBoard] = useState(wordsBoard);
+
+  const handleLetterPress = (letter) => {
+    //add code for adding letter to an object here
+    console.log({ letter });
+  };
+
   return (
     <div className="App">
       <Header word={getWord} />
-      <Board wordAsArray={randomWordAsArray} />
-      <Keyboard />
+      <Board mark={wordsBoard} word={getWord} rowCounterMax={rowCounterMax} />
+      <Keyboard data={data} onLetterPress={handleLetterPress} />
       <Dictionary />
       <Footer year={new Date().getFullYear()} />
     </div>
